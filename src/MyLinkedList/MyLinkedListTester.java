@@ -207,7 +207,7 @@ class MyLinkedListTester {
 		for (int i = 0; i < LONG_LIST_LENGTH; i++) {
 			int rndInd = rn.nextInt(longerList.size());
 			Integer removed = longerList.remove(rndInd);
-			assertEquals(removed,checkList.get(rndInd));
+			assertEquals(checkList.get(rndInd),removed);
 			checkList.remove(rndInd);
 		    assertEquals(checkList.size(),longerList.size());
 		}
@@ -226,17 +226,17 @@ class MyLinkedListTester {
 		initLists();
 		System.out.println("Test 4: size method");
 		System.out.println("        Checking size of empty List");
-		assertEquals(emptyList.size(),0);
+		assertEquals(0, emptyList.size());
 		System.out.println("        Checking size of list1");
-		assertEquals( list1.size(), 3,"size check:");
+		assertEquals(  3, list1.size(),"size check:");
 		System.out.println("        Checking size of list1 after adds");
 		list1.add(99);
 		list1.add(100);
-		assertEquals(list1.size(),5,"size check:");
+		assertEquals(5,list1.size(),"size check:");
 		System.out.println("        Checking size of list1 after removes");
 		list1.remove(list1.size()-1);
 		list1.remove(0);
-		assertEquals(list1.size(),3,"size check:");
+		assertEquals(3, list1.size(),"size check:");
 
 		System.out.println("Test 4 Passed");        
 }
@@ -292,7 +292,7 @@ class MyLinkedListTester {
 		ArrayList<Integer> checkList = new ArrayList<>();
 		for (int i = 0; i < LONG_LIST_LENGTH; i++) {
 			checkList.add(longerList.get(i));
-			assertEquals(longerList.get(i),checkList.get(i));
+			assertEquals(checkList.get(i),longerList.get(i));
 		}
 		Random rn = new Random();
 		for (int i = 0; i < LONG_LIST_LENGTH; i++) {
@@ -315,13 +315,13 @@ class MyLinkedListTester {
 		list1.add(0,99);
 		list1.add(list1.size(),100);
 		list1.add(list1.size()-1,101);
-		assertEquals(list1.size(),6,"size check:");
-		assertEquals(list1.get(0),(Integer) 99);
-		assertEquals(list1.get(1),(Integer) 65);
-		assertEquals(list1.get(2),(Integer) 21);
-		assertEquals(list1.get(3),(Integer) 42);
-		assertEquals(list1.get(4),(Integer) 101);
-		assertEquals(list1.get(5),(Integer) 100);
+		assertEquals(6, list1.size(),"size check:");
+		assertEquals((Integer) 99,list1.get(0));
+		assertEquals((Integer) 65,list1.get(1));
+		assertEquals((Integer) 21,list1.get(2));
+		assertEquals((Integer) 42,list1.get(3));
+		assertEquals((Integer) 101,list1.get(4));
+		assertEquals((Integer) 100,list1.get(5));
 		System.out.println("Test 5 Passed");        
 	
 	}
@@ -362,14 +362,14 @@ class MyLinkedListTester {
 		list1.add(list1.size(),100);
 		list1.add(list1.size()-1,101);
 		Integer old = list1.set(4,10);
-		assertEquals(old,(Integer) 101);
-		assertEquals(list1.get(4),(Integer) 10);
+		assertEquals((Integer) 101,old);
+		assertEquals((Integer) 10, list1.get(4));
 
 		System.out.println("        Checking set at random indices - multiply by -1");
 		ArrayList<Integer> checkList = new ArrayList<>();
 		for (int i = 0; i < LONG_LIST_LENGTH; i++) {
 			checkList.add(longerList.get(i));
-			assertEquals(longerList.get(i),checkList.get(i));
+			assertEquals(checkList.get(i),longerList.get(i));
 		}
 		Random rn = new Random();
 		for (int i = 0; i < LONG_LIST_LENGTH; i++) {
